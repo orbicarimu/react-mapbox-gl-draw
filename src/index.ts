@@ -71,11 +71,12 @@ export default class DrawControl extends React.Component<Props> {
       onDrawSelectionChange,
       onDrawUncombine,
       onDrawUpdate,
-      position
+      position,
+      map,
     } = this.props;
 
     // tslint:disable-next-line
-    const { map } = this.context;
+    const map = this.context.map || map;
 
     this.draw = new MapboxDraw({
       ...this.props,
