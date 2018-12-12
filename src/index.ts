@@ -37,6 +37,7 @@ interface Props {
   touchBuffer: number;
   touchEnabled: boolean;
   styles: object[];
+  _map: object;
 }
 
 export default class DrawControl extends React.Component<Props> {
@@ -72,11 +73,11 @@ export default class DrawControl extends React.Component<Props> {
       onDrawUncombine,
       onDrawUpdate,
       position,
-      map,
+      _map,
     } = this.props;
 
     // tslint:disable-next-line
-    const map = this.context.map || map;
+    const map = this.context.map || _map;
 
     this.draw = new MapboxDraw({
       ...this.props,
